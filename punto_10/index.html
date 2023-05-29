@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>Promedio de Turnos</h1>
+    <form>
+        <h3>turno mañana</h3><br>
+        <label>edad 1:</label>
+        <input type="number" name="t1d1"><br>
+        <label>edad 2:</label>
+        <input type="number" name="t1d2"><br>
+        <label>edad 3:</label>
+        <input type="number" name="t1d3"><br>
+        <label>edad 4:</label>
+        <input type="number" name="t1d4"><br>
+        <label>edad 5:</label>
+        <input type="number" name="t1d5"><br>
+        
+        <h3>turno tarde</h3><br>
+        <label>edad 1:</label>
+        <input type="number" name="t2d1"><br>
+        <label>edad 2:</label>
+        <input type="number" name="t2d2"><br>
+        <label>edad 3:</label>
+        <input type="number" name="t2d3"><br>
+        <label>edad 4:</label>
+        <input type="number" name="t2d4"><br>
+        <label>edad 5:</label>
+        <input type="number" name="t2d5"><br>
+        <label>edad 6:</label>
+        <input type="number" name="t2d6"><br>
+        
+        <h3>turno noche</h3><br>
+        <label>edad 1:</label>
+        <input type="number" name="t3d1"><br>
+        <label>edad 2:</label>
+        <input type="number" name="t3d2"><br>
+        <label>edad 3:</label>
+        <input type="number" name="t3d3"><br>
+        <label>edad 4:</label>
+        <input type="number" name="t3d4"><br>
+        <label>edad 5:</label>
+        <input type="number" name="t3d5"><br>
+        <label>edad 6:</label>
+        <input type="number" name="t3d6"><br>
+        <label>edad 7:</label>
+        <input type="number" name="t3d7"><br>
+        <label>edad 8:</label>
+        <input type="number" name="t3d8"><br>
+        <label>edad 9:</label>
+        <input type="number" name="t3d9"><br>
+        <label>edad 10:</label>
+        <input type="number" name="t3d10"><br>
+        <label>edad 11:</label>
+        <input type="number" name="t3d11"><br>
+        
+        <input type="button" value="Calcular Promedio" onclick="calcularPromedio()">
+        </form>
+    <p></p>
+
+</body>
+
+<script>
+    function calcularPromedio() {
+        var t1d1 = parseInt(document.getElementsByName("t1d1")[0].value);
+        var t1d2 = parseInt(document.getElementsByName("t1d2")[0].value);
+        var t1d3 = parseInt(document.getElementsByName("t1d3")[0].value);
+        var t1d4 = parseInt(document.getElementsByName("t1d4")[0].value);
+        var t1d5 = parseInt(document.getElementsByName("t1d5")[0].value);
+
+        var t2d1 = parseInt(document.getElementsByName("t2d1")[0].value);
+        var t2d2 = parseInt(document.getElementsByName("t2d2")[0].value);
+        var t2d3 = parseInt(document.getElementsByName("t2d3")[0].value);
+        var t2d4 = parseInt(document.getElementsByName("t2d4")[0].value);
+        var t2d5 = parseInt(document.getElementsByName("t2d5")[0].value);
+        var t2d6 = parseInt(document.getElementsByName("t2d6")[0].value);
+
+        var t3d1 = parseInt(document.getElementsByName("t3d1")[0].value);
+        var t3d2 = parseInt(document.getElementsByName("t3d2")[0].value);
+        var t3d3 = parseInt(document.getElementsByName("t3d3")[0].value);
+        var t3d4 = parseInt(document.getElementsByName("t3d4")[0].value);
+        var t3d5 = parseInt(document.getElementsByName("t3d5")[0].value);
+        var t3d6 = parseInt(document.getElementsByName("t3d6")[0].value);
+        var t3d7 = parseInt(document.getElementsByName("t3d7")[0].value);
+        var t3d8 = parseInt(document.getElementsByName("t3d8")[0].value);
+        var t3d9 = parseInt(document.getElementsByName("t3d9")[0].value);
+        var t3d10 = parseInt(document.getElementsByName("t3d10")[0].value);
+        var t3d11 = parseInt(document.getElementsByName("t3d11")[0].value);
+
+
+        var promedio1 = (t1d1 + t1d2 + t1d3 + t1d4 + t1d5) / 5;
+        var promedio2 = (t2d1 + t2d2 + t2d3 + t2d4 + t2d5 + t2d6) / 6;
+        var promedio3 = (t3d1 + t3d2 + t3d3 + t3d4 + t3d5 + t3d6 + t3d7 + t3d8 + t3d9 + t3d10 + t3d11) / 11;
+
+
+        document.querySelector('p').innerHTML = "Promedio Turno de la mañana: " + promedio1 + "<br>";
+        document.querySelector('p').innerHTML += "Promedio Turno de la tarde: " + promedio2 + "<br>";
+        document.querySelector('p').innerHTML += "Promedio Turno de la noche: " + promedio3 + "<br>";
+
+
+        if (promedio1 > promedio2 && promedio1 > promedio3) {
+            document.querySelector('p').innerHTML += "El Turno de la mañana tiene el mayor promedio.";
+        } else if (promedio2 > promedio1 && promedio2 > promedio3) {
+            document.querySelector('p').innerHTML += "El Turno de la tarde tiene el mayor promedio.";
+        } else {
+            document.querySelector('p').innerHTML += "El Turno de la noche tiene el mayor promedio.";
+        }
+    }
+</script>
+
+</html>

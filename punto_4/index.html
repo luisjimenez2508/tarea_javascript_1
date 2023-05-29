@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+
+</head>
+
+<body>
+    <h1>Numero mayor</h1>
+    <label for="">num1:</label>
+    <input type="" id="numero1" class="">
+    <label for="">num2:</label>
+    <input type="" id="numero2" class="">
+
+    <button onclick="verNumeroMayor()">ver num mayor</button>
+
+</body>
+
+<script>
+    function verNumeroMayor() {
+        let num1 = document.querySelector('#numero1').value;
+        let num2 = document.querySelector('#numero2').value;
+
+
+        if (num1 > num2) {
+            alert(num1 + " Es el mayor.")
+        } else {
+            alert(num2 + " Es el mayor.")
+        }
+    }
+</script>
+
+
+</html>

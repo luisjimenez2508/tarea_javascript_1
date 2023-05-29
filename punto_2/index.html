@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>NOTA FINAL</h1>
+    <label for="">ingrese su nombre:</label><input type="text"  id="nombre"><br>
+    <label for="">ingrese el numero de su carnet:</label><input type="number"  id="carnet"><br>
+    <label for="">ingrese la nota de su examen:</label><input type="number"  id="n1"><br>
+    <label for="">ingrese la nota de sus tareas:</label><input type="number"  id="n2"><br>
+    <label for="">ingrese la nota de su asistencia:</label><input type="number"  id="n3"><br>
+    <label for="">ingrese la nota de su investigacion:</label><input type="number"  id="n4"><br>
+    <input type="button" value="calcular" onclick="calculoPromedio()">
+    <p id="promedio"></p>
+
+</body>
+<script>
+  function calculoPromedio(){
+        var Nombre = document.getElementById("nombre").value;
+        var Carnet = document.getElementById("carnet").value;
+        var nota1 = document.getElementById("n1").value;
+        var nota2 = document.getElementById("n2").value;
+        var nota3 = document.getElementById("n3").value;
+        var nota4 = document.getElementById("n4").value;
+        var prom = (parseFloat(nota1*1.20)+parseFloat(nota2*1.40)+parseFloat(nota3*1.10)+parseFloat(nota4*1.30))/4;
+        document.getElementById("promedio").innerHTML = `<b>La nota final del estudiante ${Nombre} con numero de carntet ${Carnet} es: ${prom}</b>`;
+
+    }
+</script>
+
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<!DOCTYPE html>
+<html>
+  <body>
+    <h1>Calculo de Nota Media Ponderada</h1>
+    <form>
+      <label for="nota1">Nota 1:</label>
+      <input type="number" id="nota1" name="nota1"><br>
+      <label for="valor1">porcentaje 1:</label>
+      <input type="number" id="valor1" name="valor1">%<br>
+      <label for="nota2">Nota 2:</label>
+      <input type="number" id="nota2" name="nota2"><br>
+      <label for="valor2">porcentaje 2:</label>
+      <input type="number" id="valor2" name="valor2">%<br>
+      <input type="button" value="Calcular" onclick="calcularMediaPonderada()">
+    </form>
+
+    <p></p>
+  </body>
+  <script>
+    function calcularMediaPonderada() {
+      let nota1 = parseFloat(document.getElementById("nota1").value);
+      let nota2 = parseFloat(document.getElementById("nota2").value);
+      let valor1 = parseFloat(document.getElementById("valor1").value);
+      let valor2 = parseFloat(document.getElementById("valor2").value);
+      let parrafo = document.querySelector('p');
+
+      let mediaPonderada = ((nota1 * valor1) + (nota2 * valor2)) / (valor1 + valor2);
+
+      parrafo.innerHTML = `la nota media ponderada: ${mediaPonderada}<br>`
+    }
+  </script>
+</html>

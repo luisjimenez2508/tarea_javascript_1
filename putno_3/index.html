@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>Determinar Aumento</h1>
+    <label for="">ingrese su nombre:</label><input type="text" class="" id="nombre"><br>
+
+    <label for="">ingrese su salario:</label><input type="text" class="salario"><br>
+
+    <label for="">seleccion su categoria</label>
+    <select name="" id="categoria">
+        <option value=""></option>
+        <option value="A">A</option>
+        <option value="B">B</option>
+        <option value="C">C</option>
+        <option value="D">D</option>
+    </select><br>
+
+    <button>calcular</button>
+
+    <p></p>
+</body>
+<script>
+    let button = document.querySelector('button');
+    button.addEventListener('click', () => {
+        let nombre = document.querySelector('#nombre').value;
+        let salario = document.querySelector('.salario').value;
+        let categoria = document.querySelector('#categoria');
+
+
+        let parrafo = document.querySelector('p');
+        let aumento = 0;
+        console.log(salario);
+        switch (categoria.value) {
+            case "A":
+                aumento = salario * 1.15;
+                parrafo.innerHTML = `<b>${nombre} el aumento para tu salario de ${salario} deacuerdo a tu categoria es de 15% y seria ${aumento} </b>`;
+                break;
+            case "B":
+                aumento = salario * 1.30;
+                parrafo.innerHTML = `<b>${nombre} el aumento para tu salario de ${salario} deacuerdo a tu categoria es de 30% y seria ${aumento} </b>`;
+                break;
+            case "C":
+                aumento = salario * 1.10;
+                parrafo.innerHTML = `<b>${nombre} el aumento para tu salario de ${salario} deacuerdo a tu categoria es de 10% y seria ${aumento} </b>`;
+                break;
+            case "D":
+                aumento = salario * 1.20;
+                parrafo.innerHTML = `<b>${nombre} el aumento para tu salario de ${salario} deacuerdo a tu categoria es de 20% y seria ${aumento} </b>`;
+                break;
+            default:
+                parrafo.textContent = "Debes elegir una categoria";
+        }
+    })
+</script>
+
+</html>

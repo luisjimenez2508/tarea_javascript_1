@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Determinar descuento de viaje</h1>
+    <label for="">Punto de origen:</label><input type="text" class="" id="origen"><br>
+
+    <label for="">Destino:</label><input type="text" id="destino"><br>
+
+    <label for="">Ingresa el coste de tu viaje:</label><input type="text" id="coste"><br>
+
+    <input type="button" value="ver descuento" onclick="verDescuento()">
+
+    <p></p>
+</body>
+<script>
+    function verDescuento() {
+        let origen = document.querySelector('#origen').value;
+        let destino = document.querySelector('#destino').value;
+        let coste = document.querySelector('#coste').value;
+        
+        let parrafo = document.querySelector('p');
+        let descuento = 0;
+        
+
+        if (origen === 'ciudad de palma' && destino === 'la costa del sol'){
+            descuento = coste * 0.95;
+                parrafo.innerHTML = `<b>Su descuento sera del 5% y el total seria: ${descuento}</b>`;
+        } else if(origen === 'ciudad de palma' && destino === 'panchimalco'){
+            descuento = coste * 0.90;
+                parrafo.innerHTML = `<b>Su descuento sera del 10% y el total seria: ${descuento}</b>`;   
+        }else if(origen === 'ciudad de palma' && destino === 'puerto el triunfo'){
+            descuento = coste * 0.85;
+                parrafo.innerHTML = `<b>Su descuento sera del 15% y el total seria: ${descuento}</b>`;
+        }else{
+            parrafo.innerHTML = `<b>no hay descuento</b>`;
+        }     
+    }
+</script>
+</html>

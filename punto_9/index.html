@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <form>
+        <h1>Listar negativos, positivos y multiplos de 15</h1>
+        <label for="valores">Ingrese 10 valores separados por comas:</label>
+        <input type="text" id="valores" name="valores"><br>
+        <button type="button" onclick="contar()">Enviar</button>
+    </form>
+
+    <p></p>
+
+</body>
+
+<script>
+    function contar() {
+        const valores = document.forms[0].elements["valores"].value.split(",");
+        let parrafo = document.querySelector('p');
+        let negativos = 0;
+        let positivos = 0;
+        let multiplo = 0;
+        for (let i = 0; i < valores.length; i++) {
+            let valor = parseInt(valores[i]);
+            if (valor < 0) {
+                negativos++;
+            } else if (valor > 0) {
+                positivos++;
+            } if (valor % 15 === 0) {
+                multiplo++;
+            }
+        }
+        parrafo.innerHTML = `Cantidad de valores negativos: ${negativos}<br> Cantidad de valores positivos: ${positivos}<br> Cantidad de valores que son multiplos de 15: ${multiplo}`
+
+    }
+</script>
+
+
+</html>
